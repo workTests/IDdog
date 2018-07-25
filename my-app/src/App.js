@@ -15,6 +15,8 @@ import './css/style.css';
 
 //PAGES
 import Homepage from './pages/Homepage';
+import Singup from './pages/Singup';
+import Feed from './pages/Feed';
 
 class App extends Component {
   render() {
@@ -23,8 +25,11 @@ class App extends Component {
           <Router>
             <Switch>
               <div>
-                The IDDog
+                PAGE APP
               </div>
+              <Route exact path="/" component={Homepage}/>
+              <Route exact path="/signup" component={Singup}/>
+              <Route exact path="/feed" component={Feed}/>
             </Switch>
           </Router>
        </React.Fragment>

@@ -3,10 +3,11 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  Switch
+  Switch,
+  Fragment
 } from 'react-router-dom'
 
-class Homepage extends Component {
+class Singup extends Component {
   constructor(props) {
     super(props);
 
@@ -16,12 +17,9 @@ class Homepage extends Component {
   render() {
     return (
       <Switch>
-          <h1 className="title">
-            The IDDog
-          </h1>
       </Switch>
     );
   }
 }
 
-export default Homepage;
+export default Singup;
