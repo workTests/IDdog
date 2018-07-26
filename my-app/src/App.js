@@ -1,20 +1,14 @@
 import React, { Component} from 'react';
 import ReactDOM from 'react-dom';
-import * as axios from 'react';
-import logo from './logo.svg';
 import {
   BrowserRouter as Router,
-  Link,
-  hashHistory
-} from 'react-router-dom'
-import {
   Route,
   Switch,
-  Fragment
-} from 'react-router'
+  Redirect,
+  Link
+} from 'react-router-dom'
 
 //CSS
-import './css/App.css';
 import './css/style.css';
 
 //PAGES
@@ -22,20 +16,47 @@ import Homepage from './pages/Homepage';
 import Singup from './pages/Singup';
 import Feed from './pages/Feed';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
        <div>  
           <p className="debug1">
             DEBUG: PAGE APP START
           </p> 
-          <Router>  
+          <Router>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">11111111</Link>
+        </li>
+        <li>
+          <Link to="/will-match">222222</Link>
+        </li>
+      </ul>
+      <Switch>
+
+        <Route path="/will-match" component={WillMatch} />
+        <Route component={Home3} />
+      </Switch>
+    </div>
+  </Router>
+            <Router>
+            {/*uma rota*/}  
             <Switch>
+
               <Route path="/" component={Homepage}/>
+
               <Route path="/signup" component={Singup}/>
-              <Route path="/feed" component={Feed}/>
+
+              <Route path="/feed" component={Feed}>
+                  <Route path="/husky" component={Feed}/>
+                  <Route path="/labrador" component={Feed}/>
+                  <Route path="/hound" component={Feed}/>
+                  <Route path="/pug" component={Feed}/>
+              </Route>
+
             </Switch>
-          </Router>
+            </Router>
           <p className="debug2">
             DEBUG: PAGE APP END
           </p> 
@@ -44,4 +65,21 @@ class App extends Component {
   }
 }
 
-export default App;
+const Home = () => <h3>TESTE 1</h3>;
+
+const WillMatch = () => <h3>TESTE 2</h3>;
+
+const Home2 = () => <h3>TESTE 3</h3>;
+
+const Home3 = () => (
+  <p>
+    <ul>
+    <li>
+      <Link to="/">AGAIN 11111111</Link>
+    </li>
+    <li>
+      <Link to="/will-match"> AGAIN 222222</Link>
+    </li>
+  </ul>
+  </p>
+);

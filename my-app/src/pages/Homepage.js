@@ -1,11 +1,13 @@
 import React, { Component} from 'react';
 import {
   Route,
+  IndexRoute,
   Link,
+  IndexLink,
   Switch
 } from 'react-router-dom'
 
-class Homepage extends Component {
+export default class Homepage extends Component {
   constructor(props) {
     super(props);
 
@@ -32,5 +34,3 @@ class Homepage extends Component {
     );
   }
 }
-
-export default Homepage;

@@ -9,7 +9,7 @@ import {
 //PAGES
 import Homepage from './Homepage';
 
-class Feed extends Component {
+export default class Feed extends Component {
 
   constructor(props) {
     super(props);
@@ -20,17 +20,10 @@ class Feed extends Component {
   
   render() {
     return (
-        <React.Fragment>
-          <div>
-            TELA FEED
-          </div>
-          <Route path="/husky" component={Homepage}/>
-          <Route path="/labrador" component={Homepage}/>
-          <Route path="/hound" component={Homepage}/>
-          <Route path="/pug" component={Homepage}/>
-        </React.Fragment>
+      <div>
+        TELA FEED
+        {this.props.children}
+      </div>
     );
   }
 }
-
-export default Feed;
