@@ -24,39 +24,22 @@ export default class App extends Component {
             DEBUG: PAGE APP START
           </p> 
           <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">11111111</Link>
-        </li>
-        <li>
-          <Link to="/will-match">222222</Link>
-        </li>
-      </ul>
-      <Switch>
+            <div>
+              <Switch>
+                  <Route exact path="/" component={Homepage}/>
 
-        <Route path="/will-match" component={WillMatch} />
-        <Route component={Home3} />
-      </Switch>
-    </div>
-  </Router>
-            <Router>
-            {/*uma rota*/}  
-            <Switch>
+                  <Route exact path="/signup" component={Singup}/>
 
-              <Route path="/" component={Homepage}/>
-
-              <Route path="/signup" component={Singup}/>
-
-              <Route path="/feed" component={Feed}>
-                  <Route path="/husky" component={Feed}/>
-                  <Route path="/labrador" component={Feed}/>
-                  <Route path="/hound" component={Feed}/>
-                  <Route path="/pug" component={Feed}/>
-              </Route>
-
-            </Switch>
-            </Router>
+                  <Route exact path="/feed" component={Feed}>
+                      <Route exact path="/husky" component={Feed}/>
+                      <Route exact path="/labrador" component={Feed}/>
+                      <Route exact path="/hound" component={Feed}/>
+                      <Route exact path="/pug" component={Feed}/>
+                  </Route>
+                  <Route component={SemRota} />
+              </Switch>
+            </div>
+          </Router>
           <p className="debug2">
             DEBUG: PAGE APP END
           </p> 
@@ -65,21 +48,4 @@ export default class App extends Component {
   }
 }
 
-const Home = () => <h3>TESTE 1</h3>;
-
-const WillMatch = () => <h3>TESTE 2</h3>;
-
-const Home2 = () => <h3>TESTE 3</h3>;
-
-const Home3 = () => (
-  <p>
-    <ul>
-    <li>
-      <Link to="/">AGAIN 11111111</Link>
-    </li>
-    <li>
-      <Link to="/will-match"> AGAIN 222222</Link>
-    </li>
-  </ul>
-  </p>
-);
+const SemRota = () => <h1 className="debug3">SEM ROTA!!!!</h1>; 
