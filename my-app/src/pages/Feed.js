@@ -20,15 +20,15 @@ class Feed extends Component {
   
   render() {
     return (
-        <Switch>
+        <React.Fragment>
           <div>
             TELA FEED
           </div>
-          <Route exact path="/husky" component={Homepage}/>
-          <Route exact path="/labrador" component={Homepage}/>
-          <Route exact path="/hound" component={Homepage}/>
-          <Route exact path="/pug" component={Homepage}/>
-        </Switch>
+          <Route path="/husky" component={Homepage}/>
+          <Route path="/labrador" component={Homepage}/>
+          <Route path="/hound" component={Homepage}/>
+          <Route path="/pug" component={Homepage}/>
+        </React.Fragment>
     );
   }
 }

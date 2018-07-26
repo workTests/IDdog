@@ -1,13 +1,17 @@
 import React, { Component} from 'react';
+import ReactDOM from 'react-dom';
 import * as axios from 'react';
 import logo from './logo.svg';
 import {
   BrowserRouter as Router,
-  Route,
   Link,
+  hashHistory
+} from 'react-router-dom'
+import {
+  Route,
   Switch,
   Fragment
-} from 'react-router-dom'
+} from 'react-router'
 
 //CSS
 import './css/App.css';
@@ -21,18 +25,21 @@ import Feed from './pages/Feed';
 class App extends Component {
   render() {
     return (
-       <React.Fragment>  
-          <Router>
+       <div>  
+          <p className="debug1">
+            DEBUG: PAGE APP START
+          </p> 
+          <Router>  
             <Switch>
-              <div>
-                PAGE APP
-              </div>
-              <Route exact path="/" component={Homepage}/>
-              <Route exact path="/signup" component={Singup}/>
-              <Route exact path="/feed" component={Feed}/>
+              <Route path="/" component={Homepage}/>
+              <Route path="/signup" component={Singup}/>
+              <Route path="/feed" component={Feed}/>
             </Switch>
           </Router>
-       </React.Fragment>
+          <p className="debug2">
+            DEBUG: PAGE APP END
+          </p> 
+       </div>
     );
   }
 }

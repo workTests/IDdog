@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
 import {
-  BrowserRouter as Router,
   Route,
   Link,
   Switch
@@ -15,11 +14,21 @@ class Homepage extends Component {
   }
   render() {
     return (
-      <Switch>
+      <React.Fragment>
           <h1 className="title">
             The IDDog
           </h1>
-      </Switch>
+          <div>
+                <p>
+                </p>
+                <Link to="/">HOME 
+                </Link>
+                <p>
+                </p>
+                <Link to="/feed">FEED
+                </Link>
+          </div>
+      </React.Fragment>
     );
   }
 }
